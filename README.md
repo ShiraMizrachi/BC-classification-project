@@ -28,9 +28,12 @@ TCGA Breast Invasive Carcinoma. Source data from GDAC Firehose. Previously known
 The dataset contains summary data and clinical data from a broad sampling of 1,108 carcinomas from 1,101 patients. 
 The data was gathered as part of the Broad Institute of MIT and Harvard Firehose initiative, a cancer analysis pipeline. The clinical data includes mutation count, mutated genes, patient demographics, sample type, etc.
 
+After importing the data, using the sample ID, we linked the gene expression data (RNA-seq) with molecular data. We ascertained the samples as either ER, PR, or HER2 positive/negative and the concluded subtype.
 
+For these and other adjustments and mergers, we have mainly used Pandas library to create and view databases.
 
-After importing the data, we wanted to explore it from different angles. in order to do so, we looked at the data by creating simple pie charts.
+Then, we wanted to explore it from different angles so we can understand the data we are looking at. 
+In order to do so, we looked at the data by creating simple pie charts.
 
 
 First we checked the subtype of the patients. 
@@ -98,8 +101,46 @@ Top 10 genes associate with Er
 
 ![image](https://user-images.githubusercontent.com/106597465/177410085-e906ab9e-4b03-48f4-ac67-ecca9eff1f28.png)
 
-# Classification
+# Classification using Sklearn
 
-# NOTE
+Scikit-learn is a software machine learning library for the Python programming language.
+It features various classification, regression and clustering algorithms including support-vector machines, random forests, gradient boosting, k-means ect.
+
+In this section, we performed and evaluated four methods for performance, including, Support Vector Machines (SVM), K-nearest neighbor (kNN),  Decision Tree Classifier (DT), Logistic Regression (LG), and Random Forest Classifier (RF).
+
+ KNeighborsClassifier(5)- Classifier implementing the k-nearest neighbors vote when k=5.
+ 
+ LogisticRegression(C=0.1, multi_class= 'multinomial', solver='sag', random_state=42)- In the multiclass case, the training algorithm uses the one-vs-rest (OvR) scheme if the ‘multi_class’ option is set to ‘ovr’, and uses the cross-entropy loss if the ‘multi_class’ option is set to ‘multinomial’. 
+ 
+ DecisionTreeClassifier(random_state=42)- A decision tree classifier.
+ 
+ RandomForestClassifier(criterion='entropy', n_estimators=100, random_state=42)- he function to measure the quality of a split is entropy and The number of trees in the forest is 100.
+ 
+ 
+In order to avoid over fitting, we used Kfold.
+
+kf = KFold(n_splits=5) 
+kf.get_n_splits(X)
+KFold(n_splits=5, random_state=seed, shuffle=True)
+
+K-Folds is a cross-validator. its provides train/test indices to split data in train/test sets, ans split dataset into k consecutive folds.
+Each fold is then used once as a validation while the k - 1 remaining folds form the training set.
+
+In a loop for each fold we ran over all the classifiers above and saved the best fited model for further use.
+
+# Evaluate and Saving the best model with Joblib
+The methods were evaluated for performance to identify the best performing algorithm, which we will save for later in Drive.
+for each of those classifiers, we assessed the results based on accuracy, precision etc.
+    
+Accuracy = (TP + TN)/(TP + FP + FN + TN)
+
+Recall = TP/(TP + FN)
+
+Precision = TP/(TP + FP)
+
+Using joblib libary we saved the best preforming model in the drive.
+joblib.dump(best model, path)
+
+# tmp
 We uploaded the models with the best accuracy to Drive, and tested the prediction using flask.
 We used postman in order to send the data in json format to flask, and got a table with the model predictions for er, pr, her2 and subtype
