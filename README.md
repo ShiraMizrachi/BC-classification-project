@@ -11,8 +11,11 @@ Breast cancer has four primary molecular subtypes which are defined mostly by ho
 and other types of proteins involved (or not involved) in each cancer type:
 
 Luminal A: HR+/HER2-  ER-positive and/or PR-positive
+
 Luminal B: HR+/HER2+  HER2 positive as well 
+
 Triple-negative: HR-/HER2- Er, Pr, and HER2-negative
+
 HER2-positive HER2+ (ER- and PR-negative)
 
 In this project, using ML tools, we created Breast Cancer Type Classification based on patients' RNA-seq and other information of each patient about disease subtype, hormone expression, a mutation in an oncogene, etc.
