@@ -76,19 +76,29 @@ we used PCA to distinguish those subgroups based on HR expression, etc.
 Lowering the dimensions of the RNA-seq with all 50,000+ genes it has to 2D, 
 allows us to see with our own eyes whether there is a division of clusters in relation to the subtypes.
 
-for example, the pca of Er:
+for example:
+
+Er PCA
 
 ![image](https://user-images.githubusercontent.com/106597465/177407186-dc638e7d-716a-42ba-ba6e-5e29c4dd69c7.png)
 
+
+SubType PCA
+
+![image](https://user-images.githubusercontent.com/106597465/177410654-4d182f6b-d33b-4ee2-b39c-fe66c1fd5f0a.png)
+
+
 # ExtraTreesClassifier
-for every class we explored, we also wanted to extract the 10 most important features by using sklearn ExtraTreesClassifier.
+For every class we explored, we also wanted to extract the 10 most important features by using sklearn ExtraTreesClassifier.
 This class implements a meta estimator that fits a number of randomized decision trees (a.k.a. extra-trees) on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
 Then we presented the top 10 genes associated with the specific class (er, pr, her2, p53, and subtype) using feat_importances.
 The top genes associate with Estrogen type of breast cancer
 
-top 10 genes associate with Er
+Top 10 genes associate with Er
 
-![image](https://user-images.githubusercontent.com/106597465/177407677-8985fbaa-f39c-428a-bb32-4c2384621397.png)
+![image](https://user-images.githubusercontent.com/106597465/177410085-e906ab9e-4b03-48f4-ac67-ecca9eff1f28.png)
+
+# Classification
 
 # NOTE
 We uploaded the models with the best accuracy to Drive, and tested the prediction using flask.
