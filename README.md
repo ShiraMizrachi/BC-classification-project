@@ -59,7 +59,36 @@ HER2
 ![HER2](https://user-images.githubusercontent.com/106597465/177400517-8d4bebf4-302d-4118-a396-e117d1d24a37.png)
 
 
+We noticed that the data is generally consistent with what we expected from previous studies. 
+we can see that the proportion of subtypes and expression of HR and proteins in the data is consistent with the finds in the population.
+for example, based on a previous review on breast cancer subtypes, luminal-A is the most common subtype and represents 50%-60% of all breast cancer cases and approximately 75% of breast cancers are positive for ER and/or PR.
+(https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127612/) 
+In the data, we find the majority to be LumA type with over 50 percent. 
+The rest of the observed in the data is also consistent with the expected from literature on the subject.
 
+# PCA
+Principal component analysis (PCA) is a statistical procedure that can be used for exploratory data analysis. PCA uses linear combinations of the original data (e.g. gene expression values) to define a new set of unrelated variables (principal components). 
+Thus, PCA can be used to reduce the dimensions of a data set, allowing the description of data sets and their variance with a reduced number of variables. 
+(https://www.genomatix.de/online_help/help_regionminer/pca.html)
+
+In order to get an impression of the subgroups in the RNA-seq, 
+we used PCA to distinguish those subgroups based on HR expression, etc. 
+Lowering the dimensions of the RNA-seq with all 50,000+ genes it has to 2D, 
+allows us to see with our own eyes whether there is a division of clusters in relation to the subtypes.
+
+for example, the pca of Er:
+
+![image](https://user-images.githubusercontent.com/106597465/177407186-dc638e7d-716a-42ba-ba6e-5e29c4dd69c7.png)
+
+# ExtraTreesClassifier
+for every class we explored, we also wanted to extract the 10 most important features by using sklearn ExtraTreesClassifier.
+This class implements a meta estimator that fits a number of randomized decision trees (a.k.a. extra-trees) on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
+Then we presented the top 10 genes associated with the specific class (er, pr, her2, p53, and subtype) using feat_importances.
+The top genes associate with Estrogen type of breast cancer
+
+top 10 genes associate with Er
+
+![image](https://user-images.githubusercontent.com/106597465/177407677-8985fbaa-f39c-428a-bb32-4c2384621397.png)
 
 # NOTE
 We uploaded the models with the best accuracy to Drive, and tested the prediction using flask.
