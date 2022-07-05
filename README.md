@@ -29,5 +29,38 @@ The dataset contains summary data and clinical data from a broad sampling of 1,1
 The data was gathered as part of the Broad Institute of MIT and Harvard Firehose initiative, a cancer analysis pipeline. The clinical data includes mutation count, mutated genes, patient demographics, sample type, etc.
 
 
+
+After importing the data, we wanted to explore it from different angles. in order to do so, we looked at the data by creating simple pie charts.
+
+
+First we checked the subtype of the patients. 
+
+![image](https://user-images.githubusercontent.com/106597465/177398772-f3f95228-4dd2-49fb-a2f4-da976b8186aa.png)
+
+Then we looked at the mutaion in p53 gene.
+
+![image](https://user-images.githubusercontent.com/106597465/177399787-8b658eb8-cd3d-4732-b557-fd384151375e.png)
+
+And then we look into the state of expression or non-expression of ER, PR, and HER2.
+
+ER
+
+
+![ER](https://user-images.githubusercontent.com/106597465/177400507-8fc238b3-58fe-46a6-b335-c144acbbb56d.png)
+
+PR
+
+
+![PR](https://user-images.githubusercontent.com/106597465/177400511-20796f91-3e88-4933-b6cf-6b991ddfcadc.png)
+
+
+HER2
+
+![HER2](https://user-images.githubusercontent.com/106597465/177400517-8d4bebf4-302d-4118-a396-e117d1d24a37.png)
+
+
+
+
+# NOTE
 We uploaded the models with the best accuracy to Drive, and tested the prediction using flask.
 We used postman in order to send the data in json format to flask, and got a table with the model predictions for er, pr, her2 and subtype
