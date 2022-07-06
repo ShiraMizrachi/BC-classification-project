@@ -2,8 +2,27 @@
 
 
 Shira Mizrachi 323028845
+
 Efrat Bitton 212367635
 
+## Repository file content
+python file of the classifiers:
+classification_BC.ipynb
+
+saved models files:
+pr_model.sav
+subtype_model.sav
+er_model.sav
+her2_model.sav
+
+python file of the server-side:
+Flask_breast_cancer.ipynb
+
+input and output to flask in json:
+json_file
+json_output_visualizer
+
+## Introduction
 breast cancer is a heterogeneous disease defined by molecular types and subtypes. 
 Advances in genomic research have enabled the use of precision medicine in clinical management of breast cancer. 
 In order to make distinguish the breast cancer subtype, and later on, assign an appropriate treatment, nowadays machine learning is used for a quick diagnosis, especially in critical cases where the timing of the treatment is significant to improve the chances of a successful process.
@@ -167,5 +186,6 @@ and got a table with the model predictions for er, pr, her2 and subtype.
 
 
 ![image](https://user-images.githubusercontent.com/106597465/177569973-6bd5e23a-fc61-483b-8535-1b14d399371b.png)
+
 
 
