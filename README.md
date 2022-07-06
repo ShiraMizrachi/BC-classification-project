@@ -144,7 +144,7 @@ Using joblib libary we saved the best preforming model in the drive.
 joblib.dump(best model, path)
 
 
-## Flask- server side
+## Flask- Server side
 After saving the best models of each class, we developed a server-side using flask.
 
 Flask is a simple and lightweight Python web framework that provides useful tools and features that make creating web applications in Python easier. It gave us flexibility since using Flask enables building a web application quickly using only a single Python file.
@@ -158,8 +158,9 @@ joblib.load(path to the saved model)
 and then will return a prediction to the user:
 predict(user file)
 
-# User
+# Postman- User
 We used postman in order to send the data in json format to flask, 
 and got a table with the model predictions for er, pr, her2 and subtype.
+![image](https://user-images.githubusercontent.com/106597465/177569973-6bd5e23a-fc61-483b-8535-1b14d399371b.png)
 
 
