@@ -21,7 +21,7 @@ HER2-positive HER2+ (ER- and PR-negative)
 
 In this project, using ML tools, we created Breast Cancer Type Classification based on patients' RNA-seq and other information of each patient about disease subtype, hormone expression, a mutation in an oncogene, etc.
 
-# Data - Breast Invasive Carcinoma
+## Data - Breast Invasive Carcinoma
 The data was taken from the public database TCGA 
 (https://www.cbioportal.org/study/summary?id=brca_tcga)
 Breast Invasive Carcinoma (TCGA, Firehose Legacy)
@@ -33,6 +33,7 @@ After importing the data, using the sample ID, we linked the gene expression dat
 
 For these and other adjustments and mergers, we have mainly used Pandas library to create and view databases.
 
+### pie chart
 Then, we wanted to explore it from different angles so we can understand the data we are looking at. 
 In order to do so, we looked at the data by creating simple pie charts.
 
@@ -70,7 +71,7 @@ for example, based on a previous review on breast cancer subtypes, luminal-A is 
 In the data, we find the majority to be LumA type with over 50 percent. 
 The rest of the observed in the data is also consistent with the expected from literature on the subject.
 
-# PCA
+## PCA
 Principal component analysis (PCA) is a statistical procedure that can be used for exploratory data analysis. PCA uses linear combinations of the original data (e.g. gene expression values) to define a new set of unrelated variables (principal components). 
 Thus, PCA can be used to reduce the dimensions of a data set, allowing the description of data sets and their variance with a reduced number of variables. 
 (https://www.genomatix.de/online_help/help_regionminer/pca.html)
@@ -92,7 +93,7 @@ SubType PCA
 ![image](https://user-images.githubusercontent.com/106597465/177410654-4d182f6b-d33b-4ee2-b39c-fe66c1fd5f0a.png)
 
 
-# ExtraTreesClassifier
+## ExtraTreesClassifier
 For every class we explored, we also wanted to extract the 10 most important features by using sklearn ExtraTreesClassifier.
 This class implements a meta estimator that fits a number of randomized decision trees (a.k.a. extra-trees) on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting.
 Then we presented the top 10 genes associated with the specific class (er, pr, her2, p53, and subtype) using feat_importances.
@@ -102,7 +103,7 @@ Top 10 genes associate with Er
 
 ![image](https://user-images.githubusercontent.com/106597465/177410085-e906ab9e-4b03-48f4-ac67-ecca9eff1f28.png)
 
-# Classification using Sklearn
+## Classification using Sklearn
 
 Scikit-learn is a software machine learning library for the Python programming language.
 It features various classification, regression and clustering algorithms including support-vector machines, random forests, gradient boosting, k-means ect.
@@ -141,6 +142,14 @@ Precision = TP/(TP + FP)
 
 Using joblib libary we saved the best preforming model in the drive.
 joblib.dump(best model, path)
+
+
+## Flask
+After saving the best models of each class, we developed a server-side using flask.
+
+Flask is a simple and lightweight Python web framework that provides useful tools and features that make creating web applications in Python easier. It gave us flexibility since using Flask enables building a web application quickly using only a single Python file.
+
+The app will get a request from a user containing RNA seq in JSON format and will return a prediction using the models we saved.
 
 # tmp
 We uploaded the models with the best accuracy to Drive, and tested the prediction using flask.
