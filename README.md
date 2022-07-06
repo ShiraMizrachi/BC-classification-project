@@ -6,20 +6,32 @@ Shira Mizrachi 323028845
 Efrat Bitton 212367635
 
 ## Repository file content
+
 python file of the classifiers:
+
 classification_BC.ipynb
 
+
 saved models files:
+
 pr_model.sav
+
 subtype_model.sav
+
 er_model.sav
+
 her2_model.sav
 
+
 python file of the server-side:
+
 Flask_breast_cancer.ipynb
 
+
 input and output to flask in json:
+
 json_file
+
 json_output_visualizer
 
 ## Introduction
