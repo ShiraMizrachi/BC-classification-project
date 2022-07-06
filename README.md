@@ -149,7 +149,14 @@ After saving the best models of each class, we developed a server-side using fla
 
 Flask is a simple and lightweight Python web framework that provides useful tools and features that make creating web applications in Python easier. It gave us flexibility since using Flask enables building a web application quickly using only a single Python file.
 
-The app will get a request from a user containing RNA seq in JSON format and will return a prediction using the models we saved.
+The app will get a request from a user containing RNA seq in JSON format:
+request.get_json()
+
+then it will load the models from Drive:
+joblib.load(path to the saved model)
+
+and then will return a prediction to the user:
+predict(user file)
 
 # tmp
 We uploaded the models with the best accuracy to Drive, and tested the prediction using flask.
