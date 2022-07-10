@@ -7,12 +7,12 @@ Efrat Bitton 212367635
 
 ## Repository file content
 
-python file of the classifiers:
+Python file- classifiers:
 
-classification_BC.ipynb
+RNA_Seq_classification_BreastCancer.ipynb
 
 
-saved models files:
+Saved models files:
 
 pr_model.sav
 
@@ -23,16 +23,17 @@ er_model.sav
 her2_model.sav
 
 
-python file of the server-side:
+Python file- server-side/flask:
 
 Flask_breast_cancer.ipynb
 
 
-input and output to flask in json:
+Input and Output to flask in json format:
 
 json_file
 
 json_output_visualizer
+
 
 ## Introduction
 breast cancer is a heterogeneous disease defined by molecular types and subtypes. 
